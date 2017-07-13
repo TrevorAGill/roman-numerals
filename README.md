@@ -6,7 +6,39 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_{This  program will produce the following behaviors: }_
+
+* _For number 1 numeral base output is defined as "I"_
+  * _Input : 1_
+  * _Ouput : I_
+* _For remainder of numeral bases, use the standard defined numeral symbol_
+  * _Input : 5_
+  * _Ouput : V_
+* _Add 1 to numeral base 1_
+  * _Input : 2_
+  * _Ouput : II_
+* _Add 2 to numeral base 1_
+  * _Input : 3_
+  * _Ouput : III_
+* _Decide numeral base for input 6_
+  * _Input : 6_
+  * _Ouput : V_
+* _Add 1 to numeral base_
+  * _Input : 6_
+  * _Ouput : VI_
+* _Add 2 to numeral base_
+  * _Input : 7_
+  * _Ouput : VII_
+* _Add 4,9,40,90,400,900 support in global numbers and symbols_
+  * _Input : 1900_
+  * _Ouput : MCM_
+  * _Input : 400_
+  * _Ouput : DC_
+  * _Add error handling for numbers > 3999_
+    * _Input : 4000_
+    * _Ouput : input element number text field Error Alert_
+
+
 
 ## Setup/Installation Requirements
 
@@ -35,4 +67,3 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 *{Determine the license under which this application can be used.  See below for more details on licensing.}*
 
 Copyright (c) 2016 **_{List of contributors or company name}_**
-
