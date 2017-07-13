@@ -1,10 +1,10 @@
 $(document).ready(function() {
   $("form#romanNumeral").submit(function(event) {
 
-    //alert("hi");
+// BackEnd
 
-    var baseNumbers = [ 1,5,10,50,100,500,1000];
-    var symbols = ["I","V","X","L","C","D","M"];
+    var baseNumbers = [1,4,5,9,10,40,50,90,100,400,500,900,1000];
+    var symbols = ["I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"];
 
     function getBaseNumberSymbol(inputNumber) {
       var found = 0;
@@ -53,10 +53,8 @@ $(document).ready(function() {
         numbersToAdd.push(number);
       };
       return remainder;
-      //we need remainder !!!
     };
 
-    //getRoman returns Symbol
     function getRoman(inputNumber) {
       var numbersToAdd= [];
 
@@ -64,7 +62,6 @@ $(document).ready(function() {
       pushRemainder(numbersToAdd, remainder);
       return getSymbolsString(numbersToAdd);
     };
-
 
 
 // FRONTEND
