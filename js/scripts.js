@@ -20,37 +20,49 @@ $(document).ready(function() {
       //we want the largest baseNumber that
       // inputNumber mod baseNumber < inputNumber
       var found = 0;
-      for (var index=baseNumbers.length; index >= 0; index -= 1) {
-        alert("in For loop" + index[0]);
-
-        if ((inputNumber % baseNumber[index] < inputNumber) && !found ) {
+      for (var index = baseNumbers.length; index >= 0; index -= 1) {
+        if ((inputNumber % baseNumbers[index] < inputNumber) && !found ) {
           found = 1;
           return (baseNumbers[index]);
         }
       };
     };
 
-//getRoman returns Symbol
-    function getRoman(inputNumber) {
-      var answerString = "";
-      var numbersToAdd= [];
-
-      numbersToAdd.push((getBaseNumber(inputNumber)));
-      alert(getBaseNumber(inputNumber));
-
-      //accumulating ones
-       for (var accumulator=numbersToAdd[0]; accumulator < inputNumber; accumulator+=1) {
+    function pushRemainder(numbersToAdd, remainder) {
+      //REMAINDER : accumulating ones based on remainder
+       for ( var index = remainder; index > 0; index-- ) {
          //add 1 until accumulator === inputNumber
          numbersToAdd.push(1);
        };
+       return numbersToAdd;
+    };
 
+    function getSymbolsString(numbersToAdd){
+      var answerString = "";
+      numbersToAdd.forEach(function(number) {
+        //from array to concat'd string
+            answerString = answerString + getBaseNumberSymbol(number);
+      });
+      return answerString;
+    };
 
-     // this is fetching symbols for each number
-       numbersToAdd.forEach(function(numberToAdd) {
-          answerString = answerString + getBaseNumberSymbol(numberToAdd);
-       });
-       return answerString;
+    function getAllBaseNumbers (inputNumber,numbersToAdd) {
+      var number = 0;
+      for (var remainder = inputNumber; remainder >= 3; remainder = remainder - number) {
+        number = ((getBaseNumber(remainder)));
+        numbersToAdd.push(number);
+      };
+      return remainder;
+      //we need remainder !!!
+    };
 
+    //getRoman returns Symbol
+    function getRoman(inputNumber) {
+      var numbersToAdd= [];
+
+      var remainder = getAllBaseNumbers(inputNumber,numbersToAdd);
+      pushRemainder(numbersToAdd, remainder);
+      return getSymbolsString(numbersToAdd);
     };
 
 
